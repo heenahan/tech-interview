@@ -163,6 +163,10 @@ IP(internet protocol)는 인터넷에 연결되어 있는 모든 장치들을 �
 ## 10. OSI 7계층에 대해 설명해 주세요.
 ## 11. 3-Way Handshake에 대해 설명해 주세요.
 TCP가 connection을 수립하는 과정이다.
+
+![3 way handshake](https://github.com/heenahan/tech-interview/assets/83766322/01894539-15d2-4347-800a-2888d9fe5acd)
+
+
 1. 클라이언트가 SYN 비트를 1로 설정해 패킷을 송신한다.
 2. 서버가 SYN, ACK 비트를 1로 설정해 패킷을 송신한다.
 3. ACK 비트를 1로 설정해 패킷을 송신한다.
@@ -173,8 +177,26 @@ connection 연결 후 데이터를 전송할 때 다음과 같은 과정을 거�
 3. ACK를 수신하지 못하면 재전송한다.
 ## 12. 4-Way Handshake에 대해 설명해 주세요
 TCP가 connection을 끊는 과정이다.
+
+![4 way handshake](https://github.com/heenahan/tech-interview/assets/83766322/47b989c0-3b67-4726-b800-a24828912620)
+
 1. 데이터를 전부 송신한 클라이언트가 FIN을 송신한다.
 2. 서버가 ACK를 송신한다.
 3. TIME_WAIT, 일정 시간 대기가 되는데 서버에서 남은 패킷을 송신한다.
 4. 서버가 FIN을 송신한다.
 5. 클라이언트가 ACK를 송신한다.
+
+## 14. DNS에 대해 설명해 주세요.
+DNS, Domain Name System은 도메인 이름과 IP 주소에 대한 정보를 관리하는 시스템이다. DNS는 도메인 이름을 IP 주소로 변환해준다. 즉, 의미있는 문자열로 IP 주소로 추상화하여 인터넷 사용자는 IP 주소를 몰라도 된다. 
+
+하나의 서버에서 전 세계 모든 DNS 정보를 관리한다는 것은 단일 장애 지점이 될 수 있다. 따라서 DNS는 도메인을 계층적으로 관리하여 트래픽과 데이터를 분산한다. 
+
+www.google.com.이라는 도메인이 있고 계층 구조로 나타내면 다음과 같다. 루트 도메인은 .으로 생략된다. 다음 com은 Top Level Domain(TLD)라고 한다. TLD 아래, google과 www는 모두 Sub Domain이라 부른다. 
+
+상위 서버는 하위 서버의 주소를 알고 있으며 상위에서 하위로 이동하며 원하는 도메인에 도착한다. 이 서버들은 네임 서버(Name Server)라고 부르면서 다양한 기관에서 관리한다. Root 네임서버는 ICANN(국제 인터넷 주소 관리기구), TLD 네임서버는 도메인 등록 기관(Registry), Sub Domain 네임서버는 가비아나 Route53과 같은 도메인 판매업체(Register)가 관리한다.
+
+위 세 네임서버는 DNS 정보를 가지고 있어 권한 있는 네임서버라고 부른다. 반대로 DNS 정보를 가지고 있지 않는 로컬 DNS 서버는 권한이 없는 네임서버라 부른다. 
+## 15. SOP 정책에 대해 설명해 주세요.
+## 16. Stateless와 Connectionless에 대해 설명해 주세요.
+## 17. 라우터 내의 포워딩 과정에 대해 설명해 주세요.
+## 18. 로드밸런서가 무엇인가요?
